@@ -8,25 +8,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
-
-
 $myFile = $_FILES['file'];
 
+$myFileName = $myFile['name'];
 $myFileTmp = $myFile['tmp_name'];
-
-$myFileName = date('d-m-Y_H:i:s') . "." . pathinfo($myFileName, PATHINFO_EXTENSION);
 
 $myPath = "uploads/" . $myFileName;
 move_uploaded_file($myFileTmp,$myPath);
 
-if(($_POST['file'])){
-    $file = input($_POST['file']);
-    $_SESSION['fileError'] = '';
-}
-else{
-    $_SESSION['fileError'] = 'Şəkil boş buraxıla bilməz.';
-    header("Location:create.php");
-}
 
     if(($_POST['fullname'])){
         $fullName = input($_POST['fullname']);
@@ -74,8 +63,8 @@ else{
         header("Location:create.php");
     }
 
-    if(($_POST['marial_status'])){
-        $marialStatus = input($_POST['marial_status']);
+    if(isset($_POST['marial_status'])){
+        $marialStatus = $_POST['marial_status'];
         $_SESSION['marialStatusError'] = '';
     }
     else{

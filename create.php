@@ -18,8 +18,7 @@
     <form action="action.php" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">İstifadəçi şəkli:</label>
-        <input type="file" accept="image/*" class="form-control" id="formGroupExampleInput" name="file">
-        <span style="color: red;"><?=$_SESSION['fileError']; ?></span>
+        <input type="file" class="form-control" id="formGroupExampleInput" name="file">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Ad Soyad:</label>
@@ -29,31 +28,31 @@
       <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Vəzifə:</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" name="role">
-        <span style="color: red;"><?=$_SESSION['roleError']; ?></span>
+        <?=$_SESSION['roleError']; ?>
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Maaş:</label>
         <input type="text" class="form-control" id="formGroupExampleInput" name="salary">
-        <span style="color: red;"><?=$_SESSION['salaryError']; ?></span>
+        <?=$_SESSION['salaryError']; ?>
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Email:</label>
         <input type="mail" class="form-control" id="formGroupExampleInput2" name="email">
-        <span style="color: red;"><?=$_SESSION['emailError']; ?></span>
+        <?=$_SESSION['emailError']; ?>
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Telefon:</label>
         <input type="text" class="form-control" id="formGroupExampleInput" name="phone">
-        <span style="color: red;"><?=$_SESSION['phoneError']; ?></span>
+        <?=$_SESSION['phoneError']; ?>
       </div>
       <p>Ailə vəziyyəti:</p>
-      <span style="color: red;"><?=$_SESSION['marialStatusError']; ?></span>
+      <?=$_SESSION['marialStatusError']; ?>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="marial_status" id="inlineRadio1" value="1">
+        <input class="form-check-input" type="radio" name="marial_status" id="inlineRadio1" value="0">
         <label class="form-check-label" for="inlineRadio1">Evli</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="marial_status" id="inlineRadio2" value="2">
+        <input class="form-check-input" type="radio" name="marial_status" id="inlineRadio2" value="1">
         <label class="form-check-label" for="inlineRadio2">Subay</label>
       </div>
       <hr style="width: 100%;">
